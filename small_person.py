@@ -16,7 +16,11 @@ import sys
 import imdb
 import urllib.parse, urllib.request, re
 client = commands.Bot(command_prefix = '!')
-
+save_path = 'E:\\'
+name = os.path.join(save_path, "token.txt")
+with open(name, 'r') as file:
+	token = file.readline()
+	url = file.readline()
 # Logs the status of the bot on the console
 @client.event
 async def on_ready():
@@ -24,6 +28,8 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
+    activity = discord.Activity(name='movies | !helpme', type=discord.ActivityType.watching)
+    await client.change_presence(activity=activity)
     '''for channel in client.get_all_channels():
         if channel.name == 'general':
             await channel.send(f'Say hello to my little friend! ')
@@ -57,9 +63,13 @@ async def giverole(ctx, member: discord.Member):
     roles = list()
     roles = member.roles
     roles.pop(0)
-    await ctx.send(f'The following roles are assigned to {member.mention}')
-    for role in roles: 
-        await ctx.send(f'{role}')
+    myembed = discord.Embed(title = f'The following roles are assigned to {member.name}', colour = discord.Colour.green())
+    myembed.set_thumbnail(url = url)
+    for role in roles:
+    	index = int(roles.index(role))+1
+    	myembed.add_field(name = f'{index}', value = f'{role}', inline = True)
+    await ctx.send(embed = myembed)
+   
 
 # to clear a given amount of messages 
 @client.command()
@@ -105,13 +115,16 @@ async def test1(ctx):
 async def lsinactive(ctx, limit = 0):
     async def processinactive(ctx, guild, category):
         channels = category.channels
+        myembed = discord.Embed(title = f'Channels\' inactive period', colour = discord.Colour.gold())
+        myembed.set_thumbnail(url = url)
         for channel in channels:
             async for message in channel.history(limit=1): # channel history object is iterable and gives the messages (limit = 1 means it takes only one message )
                 evolvedtime = datetime.now()-message.created_at # creates a timedelta object
                 secondsEvolved = evolvedtime.total_seconds() #extracts total time in seconds
                 daysEvolved, remainder = divmod(secondsEvolved, 86400) # converts total time in days 
                 if daysEvolved > limit:
-                    await ctx.send(f'{channel.mention} was last active {daysEvolved} days ago') 
+                    myembed.add_field(name = f'{channel}', value = f'active {daysEvolved} days ago', inline = False) 
+        await ctx.send(embed=myembed)
 
     guild = ctx.guild
     category = get(ctx.guild.categories, name = 'Film/Shows Discussions')
@@ -166,31 +179,29 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 	
 	ia = imdb.IMDb()
 	movie = ia.search_movie(moviename)
-	movie_lst = list()
-
+	myembed = discord.Embed(title = 'Suggest a movie', colour = discord.Colour.green(), description = 'Please select which movie you want to suggest by typing the number, press 0 to cancel. (Timeout: 10 sec)')
+	myembed.set_thumbnail(url = url)
 	for count in range(5):
 		if len(movie) == count:
 			break
 		title = movie[count]['title']
 		try: 
 			movyear = movie[count]['year']
-			movie_lst.append(f'{count+1}. {title} ({movyear})')
 		except:
-			movie_lst.append(f'{count+1}. {title} (year unknown/under development)')
+			movyear = 'year unknown/under development'
 
+		myembed.add_field(name = f'{count+1}. {title} ({movyear})', value ='\u200b', inline = False)
 
-		
-	t = ''
-	for item in movie_lst:
-		t = t + item + '\n'
+	await ctx.send(embed = myembed)
+	myembed = discord.Embed(title = f'{title} ({movyear})', colour = discord.Colour.green())
 
-	await ctx.send(f'{t}\nPlease select which movie you want to suggest by typing the number, press 0 to cancel. (Timeout: 10 sec)')
 	t = True
 	while(t):
 		try:
 			msg = await client.wait_for('message', check = lambda message: message.author == ctx.author, timeout = 10)
 		except asyncio.TimeoutError:
-			await ctx.send('Timeout. Make it snappy next time.')
+			myembed.add_field(name = 'Timeout. Make it snappy next time', value = 'You didn\'t respond for 10 seconds')
+			await ctx.send(embed = myembed)
 			return
 		else:
 		#print(msg.content)
@@ -211,7 +222,8 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 		lines = rfile.readlines()
 	for line in lines:
 		if movieid+'\n' == line:
-			await ctx.send('This movie is already in the suggestion list. Thank you. You can suggest another movie for TFPS using !suggest')
+			myembed.add_field(name = 'This movie is already in the suggestion list. Thank you.', value = 'You can suggest another movie for TFPS using !suggest')
+			await ctx.send(embed = myembed)
 			return
 	movie = ia.get_movie(movieid, info = ['main'])
 
@@ -220,11 +232,11 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 	#tag = movie.get('taglines')[0]
 	
 	movieurl = 'https://www.imdb.com/title/tt' + movieid
-	await ctx.send(f'Do you want to say something about the movie? (Please type it at once in a single message) (Timeout: 120 secs)')
+	myembed.add_field(name = 'Do you want to say something about the movie?', value = '(Please type it at once in a single message) (Timeout: 120 secs)')
+	await ctx.send(embed = myembed)
 	try:
 		msg = await client.wait_for('message',check = lambda message: message.author == ctx.author, timeout = 120)
 	except asyncio.TimeoutError:
-		await ctx.send('Too slow.')
 		content = ''
 	else:
 		content = msg.content
@@ -235,19 +247,14 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 		lfile.write(f'{movieid}\n')
 	with open('movie-list.txt', 'a') as file:
 		file.write(f'{title} ({movyear})\t{movieurl}\t{content}\n')
-	await ctx.send(f'{title} ({movyear})\nThis movie has been added to the TFPS suggestions list. Thank you.')
+	myembed.clear_fields()
+	myembed.add_field(name = f'{title} ({movyear})', value = 'This movie has been added to the TFPS suggestions list. Thank you.')
+	await ctx.send(embed = myembed)
 
 
 @client.command()
 async def helpme(ctx, metho = 'default'):
 	myembed = discord.Embed(title = 'Help Commands', colour = discord.Colour.red(), description = 'Command Prefix = !')
-	channel = get(ctx.guild.channels, name = 'small-person-log')
-	async for message in channel.history(limit = None):
-		if message.id == 739877360404398171:
-			break
-	for attachment in message.attachments:
-		url = attachment.url
-		break
 	myembed.set_thumbnail(url = url)
 	myembed.add_field(name = '!helpme', value = 'Displays the help', inline = False)
 	myembed.add_field(name = '!there', value = 'Displays the helpChecks if the bot is online and returns the latency of the bot', inline = False)
@@ -316,5 +323,4 @@ async def givenow(ctx, channel: discord.TextChannel):
 
 
 
-
-client.run('xxx')
+client.run(token)

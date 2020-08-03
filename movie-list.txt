@@ -20,3 +20,6 @@ Seven Samurai (1954)	https://www.imdb.com/title/tt0047478	b'Ghost of Tsushima ma
 Room (2015)	https://www.imdb.com/title/tt3170832	b"There's a fairytale quality to it even though at the heart of it, it's a story about a victim of a terrible crime."
 Instant Family (2018)	https://www.imdb.com/title/tt7401588	
 The Platform (2019)	https://www.imdb.com/title/tt8228288	b"Let's discuss the ending :P"
+Capernaum (2018)	https://www.imdb.com/title/tt8267604	b"A wonderful movie commenting about a poor life's value of existence, misery and their struggles to survive from the perspective of 15 year old kid."
+Pushpaka Vimana (1987)	https://www.imdb.com/title/tt0251355	
+Anatomy of a Murder (1959)	https://www.imdb.com/title/tt0052561	b"The best courtroom drama I have ever seen. The audience are kept in as much knowledge as the courtroom attendees, and that is the beauty of the entire film. You don't know whether the law is correct or not."
