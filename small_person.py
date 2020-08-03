@@ -13,7 +13,8 @@ from datetime import datetime
 import os.path
 import asyncio
 import sys
-
+import imdb
+import urllib.parse, urllib.request, re
 client = commands.Bot(command_prefix = '!')
 
 # Logs the status of the bot on the console
@@ -137,16 +138,16 @@ async def archivech(ctx, channel: discord.TextChannel):
             for embed in embeds:
                 pass
             #print(f'{strtime} \t {author} \t {content} \t {embed} \t {attachment}')
-            template = '[{strtime}] <{author}> {content} ({embeds}) ({attachments}) \n'
+            t = '[{strtime}] <{author}> {content} ({embeds}) ({attachments}) \n'
             try:
                 if embed != None and attachment != None:
-                    file.write(template.format(strtime = strtime, author = author, content = content, embeds = embed.url, attachments = attachment.url))
+                    file.write(t.format(strtime = strtime, author = author, content = content, embeds = embed.url, attachments = attachment.url))
                 elif embed != None:
-                    file.write(template.format(strtime = strtime, author = author, content = content, embeds = embed.url, attachments = None))
+                    file.write(t.format(strtime = strtime, author = author, content = content, embeds = embed.url, attachments = None))
                 elif attachment != None:
-                    file.write(template.format(strtime = strtime, author = author, content = content, embeds = None, attachments = attachment.url))
+                    file.write(t.format(strtime = strtime, author = author, content = content, embeds = None, attachments = attachment.url))
                 else:
-                    file.write(template.format(strtime = strtime, author = author, content = content, embeds = None, attachments = None))
+                    file.write(t.format(strtime = strtime, author = author, content = content, embeds = None, attachments = None))
             except:
                 file.write('Archiving Error')
 
@@ -158,6 +159,152 @@ async def archivech(ctx, channel: discord.TextChannel):
     await channel.set_permissions(role, read_messages = False, send_messages = False, read_message_history = False)
         #await asyncio.sleep(4)
     
+@client.command()
+async def suggest(ctx, *,moviename = 'qwerty'):
+	if moviename == 'qwerty': return
+	
+	
+	ia = imdb.IMDb()
+	movie = ia.search_movie(moviename)
+	movie_lst = list()
+
+	for count in range(5):
+		if len(movie) == count:
+			break
+		title = movie[count]['title']
+		try: 
+			movyear = movie[count]['year']
+			movie_lst.append(f'{count+1}. {title} ({movyear})')
+		except:
+			movie_lst.append(f'{count+1}. {title} (year unknown/under development)')
+
+
+		
+	t = ''
+	for item in movie_lst:
+		t = t + item + '\n'
+
+	await ctx.send(f'{t}\nPlease select which movie you want to suggest by typing the number, press 0 to cancel. (Timeout: 10 sec)')
+	t = True
+	while(t):
+		try:
+			msg = await client.wait_for('message', check = lambda message: message.author == ctx.author, timeout = 10)
+		except asyncio.TimeoutError:
+			await ctx.send('Timeout. Make it snappy next time.')
+			return
+		else:
+		#print(msg.content)
+			rng = list(range(1,count+1))
+			try:
+				if int(msg.content) == 0: 
+					return
+				elif int(msg.content) in rng:
+					count = int(msg.content) - 1
+					t = False
+				else:
+					await ctx.send('That is not a valid attempt. Try a number between 1 and 5 or press 0 to cancel.')
+			except:
+				await ctx.send('Please type a number. Try again.')
+
+	movieid = movie[count].movieID
+	with open('movie-list-check.txt', 'r') as rfile:
+		lines = rfile.readlines()
+	for line in lines:
+		if movieid+'\n' == line:
+			await ctx.send('This movie is already in the suggestion list. Thank you. You can suggest another movie for TFPS using !suggest')
+			return
+	movie = ia.get_movie(movieid, info = ['main'])
+
+	title = movie.get('title')
+	movyear = movie.get('year')
+	#tag = movie.get('taglines')[0]
+	
+	movieurl = 'https://www.imdb.com/title/tt' + movieid
+	await ctx.send(f'Do you want to say something about the movie? (Please type it at once in a single message) (Timeout: 120 secs)')
+	try:
+		msg = await client.wait_for('message',check = lambda message: message.author == ctx.author, timeout = 120)
+	except asyncio.TimeoutError:
+		await ctx.send('Too slow.')
+		content = ''
+	else:
+		content = msg.content
+		content = content.encode('utf-8')
+	#imdburl = urllib.request.urlopen('https://www.imdb.com/title/tt' + movieid)
+	#await ctx.send(imdburl)
+	with open('movie-list-check.txt', 'a') as lfile:
+		lfile.write(f'{movieid}\n')
+	with open('movie-list.txt', 'a') as file:
+		file.write(f'{title} ({movyear})\t{movieurl}\t{content}\n')
+	await ctx.send(f'{title} ({movyear})\nThis movie has been added to the TFPS suggestions list. Thank you.')
+
+
+@client.command()
+async def helpme(ctx, metho = 'default'):
+	myembed = discord.Embed(title = 'Help Commands', colour = discord.Colour.red(), description = 'Command Prefix = !')
+	channel = get(ctx.guild.channels, name = 'small-person-log')
+	async for message in channel.history(limit = None):
+		if message.id == 739877360404398171:
+			break
+	for attachment in message.attachments:
+		url = attachment.url
+		break
+	myembed.set_thumbnail(url = url)
+	myembed.add_field(name = '!helpme', value = 'Displays the help', inline = False)
+	myembed.add_field(name = '!there', value = 'Displays the helpChecks if the bot is online and returns the latency of the bot', inline = False)
+	myembed.add_field(name = '!whois <@member-name>', value = 'Get the name from the username', inline = False)
+	myembed.add_field(name = '!memlist', value = 'Get the entire member list', inline = False)
+	myembed.add_field(name = '!giverole <@member-name>', value = 'Returns the current roles of the tagged member', inline = False)
+	myembed.add_field(name = '!!assign <@member-name> <@role-name>', value = 'Assigns the tagged role to the tagged member (MODS only)', inline = False)
+	myembed.add_field(name = '!unassign <@member-name> <@role-name>', value = 'Unassigns the tagged role from the tagged member (MODS only)', inline = False)
+	myembed.add_field(name = '!ctext <movie-name>', value = 'Creates a channel for movie discussion in the appropriate category', inline = False)
+	myembed.add_field(name = '!lsinactive <number of days>', value = 'Lists the channels inactive for more than the number of days entered by user', inline = False)
+	myembed.add_field(name = '!archivech <#channel-name>', value = 'Archives the channel and returns a text file (also hides the channel) (MODS only)', inline = False)
+	myembed.add_field(name = '!suggest <movie-name>', value = 'Takes a movie to be inserted into the TFPS movie suggestion database', inline = False)
+	myembed.add_field(name = '!recommend', value = 'Recommends three random movies from the coveted TFPS movie suggestion database with the IMDB link', inline = False)
+
+	await ctx.send(embed = myembed)
+	
+
+@client.command()
+async def whois(ctx, member: discord.Member):
+	channel = get(ctx.guild.channels, name = 'welcome')
+	messages = await channel.pins()
+	for message in messages:
+		if message.author == member:
+			await ctx.send(f'{member.mention} is {message.content}')
+			return
+	channel = get(ctx.guild.channels, name = 'welcome2')
+	messages = await channel.pins()
+	for message in messages:
+		if message.author == member:
+			await ctx.send(f'{member.mention} is {message.content}')
+			return
+	await ctx.send(f'{member.mention} is not known. {member.mention} should type their full name in {channel.mention}')
+
+@client.command()
+async def memlist(ctx):
+	persons = list()
+	names = list()
+	template = ''
+	channel = get(ctx.guild.channels, name = 'welcome')
+	messages = await channel.pins()
+	for message in messages:
+		persons.append(message.author.mention)
+		names.append(message.content)
+	channel = get(ctx.guild.channels, name = 'welcome2')
+	messages = await channel.pins()
+	for message in messages:
+		persons.append(message.author.mention)
+		names.append(message.content)
+	
+	for count in range(len(persons)):
+		persona = persons[count]
+		namea = names[count]
+		template = template + f'{persona}, {namea}\n'
+		if (count+1)%50 == 0 or count == len(persons)-1:
+			await ctx.send(f'{template}')
+			template = ''
+			
 
 
 ''''@client.command()
@@ -170,4 +317,4 @@ async def givenow(ctx, channel: discord.TextChannel):
 
 
 
-client.run('xxxx')
+client.run('xxx')
