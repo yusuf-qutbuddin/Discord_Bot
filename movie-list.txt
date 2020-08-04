@@ -23,3 +23,14 @@ The Platform (2019)	https://www.imdb.com/title/tt8228288	b"Let's discuss the end
 Capernaum (2018)	https://www.imdb.com/title/tt8267604	b"A wonderful movie commenting about a poor life's value of existence, misery and their struggles to survive from the perspective of 15 year old kid."
 Pushpaka Vimana (1987)	https://www.imdb.com/title/tt0251355	
 Anatomy of a Murder (1959)	https://www.imdb.com/title/tt0052561	b"The best courtroom drama I have ever seen. The audience are kept in as much knowledge as the courtroom attendees, and that is the beauty of the entire film. You don't know whether the law is correct or not."
+Satya (1998)	https://www.imdb.com/title/tt0195231	b'1'
+Into the Wild (2007)	https://www.imdb.com/title/tt0758758	b"It's based on a true story, the bus was removed recently because tourists were visiting even though it was too risky"
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)	https://www.imdb.com/title/tt0057012	b'An amazing Kubrick satire on the cold war during the cold war and a prescience on having wrong people on the trigger (red button) to nuclear bombs.'
+Before Sunrise (1995)	https://www.imdb.com/title/tt0112471	b'A good case study for writing conversations.'
+Burning (2018)	https://www.imdb.com/title/tt7282468	b'I find this to have one of the best and subtle class-gap commentaries, assumptions and results.'
+Donnie Darko (2001)	https://www.imdb.com/title/tt0246578	b'Kuch ajeeb sa psycho movie hai... get stones and watch'
+Winter Sleep (2014)	https://www.imdb.com/title/tt2758880	b"Ceylan movie that won Palme d'or"
+Hello Cinema (1995)	https://www.imdb.com/title/tt0114329	b"A must watch. It's a tribute, a documentary, a fiction, a fantasy. It's everything yet it's nothing."
+Kandahar (2001)	https://www.imdb.com/title/tt0283431	b'!suggest a separation'
+A Separation (2011)	https://www.imdb.com/title/tt1832382	b'Dysfunctional family drama \xe2\x9d\xa4\xef\xb8\x8f'
+The Kids Are All Right (2010)	https://www.imdb.com/title/tt0842926	b'A mid-life crisis to top all crises.'

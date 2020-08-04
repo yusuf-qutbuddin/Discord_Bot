@@ -15,6 +15,7 @@ import asyncio
 import sys
 import imdb
 import urllib.parse, urllib.request, re
+import random as r
 client = commands.Bot(command_prefix = '!')
 save_path = 'E:\\'
 name = os.path.join(save_path, "token.txt")
@@ -193,8 +194,8 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 		myembed.add_field(name = f'{count+1}. {title} ({movyear})', value ='\u200b', inline = False)
 
 	await ctx.send(embed = myembed)
-	myembed = discord.Embed(title = f'{title} ({movyear})', colour = discord.Colour.green())
-
+	
+	myembed.clear_fields()
 	t = True
 	while(t):
 		try:
@@ -218,11 +219,19 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 				await ctx.send('Please type a number. Try again.')
 
 	movieid = movie[count].movieID
+	title = movie[count]['title']
+	try:
+		movyear = movie[count]['year']
+	except:
+		movyear = 'year unknown/under development'
+
+	myembed = discord.Embed(title = f'{title} ({movyear})')
+	myembed.set_thumbnail(url = url)
 	with open('movie-list-check.txt', 'r') as rfile:
 		lines = rfile.readlines()
 	for line in lines:
 		if movieid+'\n' == line:
-			myembed.add_field(name = 'This movie is already in the suggestion list. Thank you.', value = 'You can suggest another movie for TFPS using !suggest')
+			myembed.add_field(name = 'The movie is already in the suggestion list. Thank you.', value = 'You can suggest another movie for TFPS using !suggest')
 			await ctx.send(embed = myembed)
 			return
 	movie = ia.get_movie(movieid, info = ['main'])
@@ -248,7 +257,7 @@ async def suggest(ctx, *,moviename = 'qwerty'):
 	with open('movie-list.txt', 'a') as file:
 		file.write(f'{title} ({movyear})\t{movieurl}\t{content}\n')
 	myembed.clear_fields()
-	myembed.add_field(name = f'{title} ({movyear})', value = 'This movie has been added to the TFPS suggestions list. Thank you.')
+	myembed.add_field(name = f'{title} ({movyear})', value = 'The movie has been added to the TFPS suggestions list. Thank you.')
 	await ctx.send(embed = myembed)
 
 
@@ -267,6 +276,8 @@ async def helpme(ctx, metho = 'default'):
 	myembed.add_field(name = '!lsinactive <number of days>', value = 'Lists the channels inactive for more than the number of days entered by user', inline = False)
 	myembed.add_field(name = '!archivech <#channel-name>', value = 'Archives the channel and returns a text file (also hides the channel) (MODS only)', inline = False)
 	myembed.add_field(name = '!suggest <movie-name>', value = 'Takes a movie to be inserted into the TFPS movie suggestion database', inline = False)
+	myembed.add_field(name = '!hangman', value = 'Starts a game of Hangman for movies', inline = False)
+	
 	myembed.add_field(name = '!recommend', value = 'Recommends three random movies from the coveted TFPS movie suggestion database with the IMDB link', inline = False)
 
 	await ctx.send(embed = myembed)
@@ -313,6 +324,63 @@ async def memlist(ctx):
 			template = ''
 			
 
+@client.command()
+async def hangman(ctx):
+	def process(ctx, moviename, varstr):
+		template = ''
+		for ch in moviename.lower():
+			try:
+				varstr.index(ch.lower())
+				template = template + ch + ' '
+				
+			except:
+				template = template + '-' + ' '
+		return template
+	ia = imdb.IMDb()
+	top250 = ia.get_top250_movies()
+	rn = r.randrange(1,251)
+	moviename = top250[rn].get('title')
+	varstr = 'aeiou :\',;.0123456789'
+	template = process(ctx, moviename, varstr)		
+	print(template)
+	myembed = discord.Embed(title = f'Hangman (Movies)', description = 'Type the letter you want to guess, type the entire movie if you can guess. Either type the full movie name or individual letters', colour = discord.Colour.dark_orange())
+	myembed.add_field(name = f'{template}', value = '\u200b', inline = False)
+	await ctx.send(embed = myembed)
+	count = 1
+	while(count <= 7):
+		msg = await client.wait_for('message', check = lambda message: message.author == ctx.author)
+		
+		if msg.content.lower() == moviename.lower():
+			await ctx.send('Congrats babu bhai, you win')
+			return
+		elif len(msg.content) > 1:
+			await ctx.send(f'You lose because that is not the right guess. Sir phodd saale ka.\nThe movie is: {moviename}')
+			return
+		elif msg.content.lower() in moviename.lower() and msg.content not in 'aeiou ':
+			for ch in moviename.lower():
+				if msg.content == ch:
+					varstr = varstr + msg.content
+					template = process(ctx, moviename, varstr)
+		else:
+			completename = str(count-1)+'.png' 
+			with open(completename, 'rb' ) as rfile:
+				await ctx.send(file = discord.File(rfile, completename))
+			count += 1
+
+		myembed.clear_fields()
+		myembed.add_field(name = f'{template}', value = '\u200b', inline = False)
+		await ctx.send(embed = myembed)	
+		if template.replace(' ','q').isalpha():
+			await ctx.send('You win halkat')
+			return
+
+
+
+	await ctx.send(f'You are such a loser. You should die.\nThe movie is: {moviename}')
+	
+
+
+
 
 ''''@client.command()
 @commands.has_role('MODS')
@@ -324,3 +392,4 @@ async def givenow(ctx, channel: discord.TextChannel):
 
 
 client.run(token)
+
