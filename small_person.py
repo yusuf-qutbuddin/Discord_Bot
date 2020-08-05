@@ -325,7 +325,8 @@ async def memlist(ctx):
 			
 
 @client.command()
-async def hangman(ctx):
+async def hangman(ctx, member:discord.Member = None):
+	
 	def process(ctx, moviename, varstr):
 		template = ''
 		for ch in moviename.lower():
@@ -337,29 +338,39 @@ async def hangman(ctx):
 				template = template + '-' + ' '
 		return template
 	ia = imdb.IMDb()
-	top250 = ia.get_top250_movies()
-	rn = r.randrange(1,251)
-	moviename = top250[rn].get('title')
+	
+	if member is None:
+		top250 = ia.get_top250_movies()
+		rn = r.randrange(1,250)
+		moviename = top250[rn].get('title')
+		author = ctx.author
+	else:
+		await ctx.author.send('Tell me the name of the movie')
+		mn = await client.wait_for('message', check = lambda message: message.author == ctx.author)
+		await ctx.send(f'{member} show us what you got')
+		moviename = mn.content
+		author = member
+		
 	varstr = 'aeiou :\',;.0123456789'
 	template = process(ctx, moviename, varstr)		
-	print(template)
+	
 	myembed = discord.Embed(title = f'Hangman (Movies)', description = 'Type the letter you want to guess, type the entire movie if you can guess. Either type the full movie name or individual letters', colour = discord.Colour.dark_orange())
 	myembed.add_field(name = f'{template}', value = '\u200b', inline = False)
 	await ctx.send(embed = myembed)
 	count = 1
 	while(count <= 7):
-		msg = await client.wait_for('message', check = lambda message: message.author == ctx.author)
-		
-		if msg.content.lower() == moviename.lower():
-			await ctx.send('Congrats babu bhai, you win')
+		msg = await client.wait_for('message', check = lambda message: message.author == author)
+		content = msg.content.lower()
+		if content == moviename.lower():
+			await ctx.send('Congrats babu bhaiya, you win')
 			return
-		elif len(msg.content) > 1:
+		elif len(content) > 1:
 			await ctx.send(f'You lose because that is not the right guess. Sir phodd saale ka.\nThe movie is: {moviename}')
 			return
-		elif msg.content.lower() in moviename.lower() and msg.content not in 'aeiou ':
+		elif content in moviename.lower() and content not in 'aeiou ':
 			for ch in moviename.lower():
-				if msg.content == ch:
-					varstr = varstr + msg.content
+				if content == ch:
+					varstr = varstr + content
 					template = process(ctx, moviename, varstr)
 		else:
 			completename = str(count-1)+'.png' 
@@ -371,12 +382,12 @@ async def hangman(ctx):
 		myembed.add_field(name = f'{template}', value = '\u200b', inline = False)
 		await ctx.send(embed = myembed)	
 		if template.replace(' ','q').isalpha():
-			await ctx.send('You win halkat')
+			await ctx.send('Halkat! Jeet gaya re!')
 			return
 
 
 
-	await ctx.send(f'You are such a loser. You should die.\nThe movie is: {moviename}')
+	await ctx.send(f'*slaps* Ye babu bhai ka shtyle hai re.\nThe movie is: {moviename}')
 	
 
 

@@ -34,3 +34,7 @@ Hello Cinema (1995)	https://www.imdb.com/title/tt0114329	b"A must watch. It's a 
 Kandahar (2001)	https://www.imdb.com/title/tt0283431	b'!suggest a separation'
 A Separation (2011)	https://www.imdb.com/title/tt1832382	b'Dysfunctional family drama \xe2\x9d\xa4\xef\xb8\x8f'
 The Kids Are All Right (2010)	https://www.imdb.com/title/tt0842926	b'A mid-life crisis to top all crises.'
+The Fall (2006)	https://www.imdb.com/title/tt0460791	b'!hangman'
+Zombieland: Double Tap (2019)	https://www.imdb.com/title/tt1560220	b'Better than most zombie films out there'
+The Last Samurai (2003)	https://www.imdb.com/title/tt0325710	
+Masaan (2015)	https://www.imdb.com/title/tt4635372	b'-play star spangled'
