@@ -38,3 +38,8 @@ The Fall (2006)	https://www.imdb.com/title/tt0460791	b'!hangman'
 Zombieland: Double Tap (2019)	https://www.imdb.com/title/tt1560220	b'Better than most zombie films out there'
 The Last Samurai (2003)	https://www.imdb.com/title/tt0325710	
 Masaan (2015)	https://www.imdb.com/title/tt4635372	b'-play star spangled'
+Undone (2019)	https://www.imdb.com/title/tt8101850	b'it is wriiten by bojack writers and animation is dope, VINCENT waale vibes!!!'
+The Salesman (2016)	https://www.imdb.com/title/tt5186714	b'Asghar Farhadi gem. Explores husband-wife relationships.'
+Breathless (1960)	https://www.imdb.com/title/tt0053472	b'Simple storytelling in a rather striking manner. Plot can be described in one-line, but it still captures the viewer.'
+Single Slipper Size - 7 (2019)	https://www.imdb.com/title/tt10370116	b"It's a tamil movie, about a unstable murder suspect. Amazing acting too"
+Fight Club (1999)	https://www.imdb.com/title/tt0137523	b"Don't take the message at face value PLEASE"

@@ -329,14 +329,16 @@ async def hangman(ctx, member:discord.Member = None):
 	
 	def process(ctx, moviename, varstr):
 		template = ''
+		ctemp = ''
 		for ch in moviename.lower():
 			try:
 				varstr.index(ch.lower())
 				template = template + ch + ' '
-				
+				ctemp = ctemp + ch
 			except:
 				template = template + '-' + ' '
-		return template
+				ctemp = ctemp + '-'
+		return template, ctemp
 	ia = imdb.IMDb()
 	
 	if member is None:
@@ -346,8 +348,8 @@ async def hangman(ctx, member:discord.Member = None):
 		author = ctx.author
 	else:
 		await ctx.author.send('Tell me the name of the movie')
-		mn = await client.wait_for('message', check = lambda message: message.author == ctx.author)
-		await ctx.send(f'{member} show us what you got')
+		mn = await client.wait_for('message', check = lambda message: message.author == ctx.author and message.guild is None)
+		await ctx.send(f'{member.mention} show us what you got')
 		moviename = mn.content
 		author = member
 		
@@ -355,12 +357,14 @@ async def hangman(ctx, member:discord.Member = None):
 	template = process(ctx, moviename, varstr)		
 	
 	myembed = discord.Embed(title = f'Hangman (Movies)', description = 'Type the letter you want to guess, type the entire movie if you can guess. Either type the full movie name or individual letters', colour = discord.Colour.dark_orange())
-	myembed.add_field(name = f'{template}', value = '\u200b', inline = False)
+	myembed.add_field(name = f'{template[0]}', value = '\u200b', inline = False)
 	await ctx.send(embed = myembed)
 	count = 1
+	wrong = '-'
 	while(count <= 7):
 		msg = await client.wait_for('message', check = lambda message: message.author == author)
 		content = msg.content.lower()
+		myembed.clear_fields()
 		if content == moviename.lower():
 			await ctx.send('Congrats babu bhaiya, you win')
 			return
@@ -376,12 +380,15 @@ async def hangman(ctx, member:discord.Member = None):
 			completename = str(count-1)+'.png' 
 			with open(completename, 'rb' ) as rfile:
 				await ctx.send(file = discord.File(rfile, completename))
+			wrong = wrong +'~~'+content+'~~' + ' '
+			
+			
 			count += 1
-
-		myembed.clear_fields()
-		myembed.add_field(name = f'{template}', value = '\u200b', inline = False)
+		myembed.add_field(name = 'Wrong Tries', value = f'{wrong}')
+		myembed.add_field(name = f'{template[0]}', value = '\u200b', inline = False)
 		await ctx.send(embed = myembed)	
-		if template.replace(' ','q').isalpha():
+
+		if template[1] == moviename.lower():
 			await ctx.send('Halkat! Jeet gaya re!')
 			return
 
