@@ -43,3 +43,103 @@ The Salesman (2016)	https://www.imdb.com/title/tt5186714	b'Asghar Farhadi gem. E
 Breathless (1960)	https://www.imdb.com/title/tt0053472	b'Simple storytelling in a rather striking manner. Plot can be described in one-line, but it still captures the viewer.'
 Single Slipper Size - 7 (2019)	https://www.imdb.com/title/tt10370116	b"It's a tamil movie, about a unstable murder suspect. Amazing acting too"
 Fight Club (1999)	https://www.imdb.com/title/tt0137523	b"Don't take the message at face value PLEASE"
+The Good, the Bad and the Ugly (1966)	https://www.imdb.com/title/tt0060196	b'The entire dollar trilogy is amazing. Lookout for the iconic music'
+Shoplifters (2018)	https://www.imdb.com/title/tt8075192	b"Palme d'or. what else?"
+Dhuruvangal Pathinaaru (2016)	https://www.imdb.com/title/tt6380520	b"It's a nail biting thriller!"
+Hush (2016)	https://www.imdb.com/title/tt5022702	b"It's something similar to Don't breathe, I found the cinematography amazing"
+Midsommar (2019)	https://www.imdb.com/title/tt8772262	b'!cookiejar'
+Thelma & Louise (1991)	https://www.imdb.com/title/tt0103074	b'!cookiejar'
+The Killing of a Sacred Deer (2017)	https://www.imdb.com/title/tt5715874	b'Undertones of violence and a general creep. Amazing movie.'
+The Truman Show (1998)	https://www.imdb.com/title/tt0120382	
+House of Cards (2013)	https://www.imdb.com/title/tt1856010	
+One Punch Man (2015)	https://www.imdb.com/title/tt4508902	b'A series about a guy bored because hes more powerful than anything else'
+Baraka (1992)	https://www.imdb.com/title/tt0103767	b'"If man sends another Voyager to the distant stars and it can carry only one film on board, that film might be Baraka. "'
+Roma (2018)	https://www.imdb.com/title/tt6155172	b'One of those movies which connect with you as a woman so deeply that you are left wanting for more'
+Flipped (2010)	https://www.imdb.com/title/tt0817177	
+Loveless (2017)	https://www.imdb.com/title/tt6304162	b'Dysfunctional family and a lonely kid, hits the right spot'
+Dheepan (2015)	https://www.imdb.com/title/tt4082068	b"It's a Tamil film about immigrants. Beautiful film"
+Masoom (1983)	https://www.imdb.com/title/tt0085913	
+Dial M for Murder (1954)	https://www.imdb.com/title/tt0046912	b"The best Hitchcock movie there is. Do watch if you enjoy murder mysteries, it's a well written well directed movie."
+Vertigo (1958)	https://www.imdb.com/title/tt0052357	b"The movie that the famous shot is named after. Although in my opinion that is not the peak of brilliance in the movie. A very good case study for staging and blocking in cinema if you're interested."
+Das Boot (1981)	https://www.imdb.com/title/tt0082096	b'There are no winners in a war. It follows the German U-boats during the WWII.'
+The Lives of Others (2006)	https://www.imdb.com/title/tt0405094	b"It's a german movie during the cold war period, with high surveillance in East Germany. Human vile and compassion, both brimming in this movie."
+Good Bye Lenin! (2003)	https://www.imdb.com/title/tt0301357	b'Some reading about the partition of germany before watching this would be good. A really nice concept overall. Very funny.'
+Delicatessen (1991)	https://www.imdb.com/title/tt0101700	b'JPJ fans, this is the other end of the spectrum. Full of symbolism, sit with a pen and a paper if you want to list them down and understand them. Fir reddit pe jaake maze karo.'
+The City of Lost Children (1995)	https://www.imdb.com/title/tt0112682	b'Another JPJ brilliance. There is some madness is this film. Eccentric modern french cinema, kaafi pyari editing'
+Mumbai Meri Jaan (2008)	https://www.imdb.com/title/tt1266583	b'How a major terrorist event changes the daily lives of mumbai dwellers, their prejudices, fears, and compassion; all increasing.'
+Prisoners (2013)	https://www.imdb.com/title/tt1392214	b'Great thriller movie, amazing ending'
+The Grand Budapest Hotel (2014)	https://www.imdb.com/title/tt2278388	b"Wes Anderson's symmetry + retro feel"
+Travelers (2016)	https://www.imdb.com/title/tt5651844	b'Time travel show filled with action and thrill'
+Mindhunter (2017)	https://www.imdb.com/title/tt5290382	b'A series based on criminal psychology'
+Arrested Development (2003)	https://www.imdb.com/title/tt0367279	b"Now the story of a wealthy family who lost everything, and the one son who had no choice but to keep them all together. It's Arrested Development"
+The IT Crowd (2006)	https://www.imdb.com/title/tt0487831	b'A quirky nerdy comedy about the IT department of a company.'
+Ozark (2017)	https://www.imdb.com/title/tt5071412	b"Has a good ol' Breaking Bad vibe to it"
+12 Monkeys (2015)	https://www.imdb.com/title/tt3148266	b'For those who liked Dark, based on the 1995 movie, with a similar concept'
+Community (2009)	https://www.imdb.com/title/tt1439629	b'Full of pop culture references, parodies. Made by the creator of Rick and Morty'
+Episodes (2011)	https://www.imdb.com/title/tt1582350	b'Story about a writer couple , who brings their hit UK show to US, and how the industry fucks it up. Matt LeBlanc of Friends fame, stars as himself'
+Wrecked (2016)	https://www.imdb.com/title/tt4168956	b'A Lost parody, about a airplane that crashes on a island, and the comedy behind it lol'
+The Man in the High Castle (2015)	https://www.imdb.com/title/tt1740299	b'Show about, what if the Nazis won the world war?'
+Master of None (2015)	https://www.imdb.com/title/tt4635276	b"Aziz Ansari's  best show till now imo. A simple feel good show"
+Atypical (2017)	https://www.imdb.com/title/tt6315640	b"A dramedy around a family, who's eldest son is Autistic. His and his family' challenges, shown in a wonderful way"
+The Prestige (2006)	https://www.imdb.com/title/tt0482571	b'Nolan ko best director mila tha'
+Angamaly Diaries (2017)	https://www.imdb.com/title/tt6167894	b'!suggest meghe dhaka tara'
+The Cloud-Capped Star (1960)	https://www.imdb.com/title/tt0054073	b'First of the famous Partition trilogy movies'
+Chungking Express (1994)	https://www.imdb.com/title/tt0109424	b'No.'
+Dog Day Afternoon (1975)	https://www.imdb.com/title/tt0072890	b'Pacino movie. Worth a watch just for the acting chops.'
+Lost in Translation (2003)	https://www.imdb.com/title/tt0335266	b'!suggest Eternal sunshine of the spotless mind'
+Eternal Sunshine of the Spotless Mind (2004)	https://www.imdb.com/title/tt0338013	
+Gone Girl (2014)	https://www.imdb.com/title/tt2267998	
+1922 (2017)	https://www.imdb.com/title/tt6214928	b"It's based on the novel of Stephen king,"
+Little Women (2019)	https://www.imdb.com/title/tt3281548	
+Cloudy with a Chance of Meatballs (2009)	https://www.imdb.com/title/tt0844471	b'Animated film, genre: comedy'
+Cloudy With a Chance of Meatballs 2 (2013)	https://www.imdb.com/title/tt1985966	b'Animated movie, genre: comedy'
+Pawn Sacrifice (2014)	https://www.imdb.com/title/tt1596345	b'It\'s a movie based on a true story of the American chess player Bobby Fischer, who was obsessed with chess since childhood. His obsession helps him take over his goal of defeating all the best players in the world, and his specific goal of \'defeating the Russians in chess\'. The movie shows how obsession may be the quickest tool to get you to your goal, but till the time you do achieve your goal, the aspects of life which you utterly ignored build up over time, and they start reflecting in your behaviour, and after you have achieved your goal, your desire is satisfied, and you are content in that way, but the negative things which built up inside you, stay. So after your goal is achieved, you are helplessly exposed to the grave problems which had built up in your life. Only when you lose your focus on one thing, do you start to look around. The exposure to these problems, is sometimes the price you pay, to life your life as the greatest. As one of the characters said, "Bobby was more afraid of winning the game". These are the things which came to my mind. Definitely worth watching if you want to observe these things, from a real life example.'
+Baby Driver (2017)	https://www.imdb.com/title/tt3890160	b'Another great Edgar Wright film. Amazing play with sound and good story overall'
+Aruvi (2016)	https://www.imdb.com/title/tt5867800	
+Vedam (2010)	https://www.imdb.com/title/tt1649431	
+Source Code (2011)	https://www.imdb.com/title/tt0945513	b'Movie explores various possibilities of an incident'
+Up (2009)	https://www.imdb.com/title/tt1049413	b'A nice movie xD'
+Miracle Workers (2019)	https://www.imdb.com/title/tt7529770	b'An comedy anthalogy about God, heaven in general, every season is different. Stars Danielle Radcliffe, Steve Buschemi'
+Silicon Valley (2014)	https://www.imdb.com/title/tt2575988	b'A comedy about a young startup, based in its namesake Silicon Valley. Great programmer humor in this show'
+Mr. Robot (2015)	https://www.imdb.com/title/tt4158110	b'A suspense thriller revolving around a young vigilante hacker and his connection to the mysterious Mr Robot. Has a great story& very accurate depiction of hacking'
+Superstore (2015)	https://www.imdb.com/title/tt4477976	b'a comedy based in Cloud9, a superstore chain. Great watch, light hearted comedy'
+The Good Place (2016)	https://www.imdb.com/title/tt4955642	b'Comedy/Drama, based around in the afterlife, full of philosophical questions, nice and quirky humor. Developed by Michael Schur of Brooklyn 99, The Office and Parks and Recreation'
+Love (2016)	https://www.imdb.com/title/tt4061080	b"A down to earth look at relationships. One of Netflix's best Romantic Comedies, created by Judd Apatow"
+Jack Reacher (2012)	https://www.imdb.com/title/tt0790724	b'A realistic action film with great story. Amazing thriller'
+I Want to Eat Your Pancreas (2018)	https://www.imdb.com/title/tt7236034	b'!recommend'
+Five Feet Apart (2019)	https://www.imdb.com/title/tt6472976	b'Based on true story. About a person suffering from cystic fibrosis'
+Daddy's Home (2015)	https://www.imdb.com/title/tt1528854	b'haas haas ke pagal ho jaoge'
+Daddy's Home 2 (2017)	https://www.imdb.com/title/tt5657846	b'Part 2 of haas haas ke pagal ho jaoge'
+The Garden of Words (2013)	https://www.imdb.com/title/tt2591814	b'When a lonely teenager skips his morning lessons to sit in a lovely garden, he meets a mysterious older woman who shares his feelings of alienation.'
+Wolf Children (2012)	https://www.imdb.com/title/tt2140203	b'Hana marries a wolf man and raises their two children alone after he dies. They move to the countryside and the children have adventures in the woods and at school.'
+The Boy and the Beast (2015)	https://www.imdb.com/title/tt4272866	b'Bas dekh lo bohot accha hai.The Boy and the Beast is a 2015 Japanese animated action-adventure fantasy film written and directed by Mamoru Hosoda.'
+Big Hero 6 (2014)	https://www.imdb.com/title/tt2245084	b"Hiro, a robotics prodigy, joins hands with Baymax in order to avenge his brother's death. They then team up with Hiro's friends to form a team of high-tech heroes."
+Spider-Man: Into the Spider-Verse (2018)	https://www.imdb.com/title/tt4633694	b'Is type ka animation kabhi nahi dekha hoga pakka .After gaining superpowers from a spider bite, Miles Morales protects the city as Spider-Man. Soon, he meets alternate versions of himself and gets embroiled in an epic battle to save the multiverse.'
+The Breadwinner (2017)	https://www.imdb.com/title/tt3901826	b'Parvana is an 11-year-old girl who lives under Taliban rule in Afghanistan in 2001. After the wrongful arrest of her father, Parvana cuts off her hair and dresses like a boy to support her family. Working alongside a friend, she soon discovers a new world of freedom and danger. Drawing strength from the fantastical stories she invents, Parvana embarks on an epic quest to find her father and reunite her family.'
+Grave of the Fireflies (1988)	https://www.imdb.com/title/tt0095327	b'Very very sad. It simply tells that war can never bring peace.       A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive.'
+Coraline (2009)	https://www.imdb.com/title/tt0327597	b'Experience Stop motion with amazing story'
+Hardcore Henry (2015)	https://www.imdb.com/title/tt3072482	b'First person movie. Completely new experience'
+Now You See Me (2013)	https://www.imdb.com/title/tt1670345	b'fake magic movie with little suspense'
+Gandhi (1982)	https://www.imdb.com/title/tt0083987	b'dive deep into the life of Gandhi. A very long movie'
+Avatar (2009)	https://www.imdb.com/title/tt0499549	b'great cgi with great story about environment protection'
+Mother (2009)	https://www.imdb.com/title/tt1216496	b'Amazing story with a great twist. And MOM is totally freaking mad'
+Joker (2019)	https://www.imdb.com/title/tt7286456	b'No intro needed'
+Children Who Chase Lost Voices (2011)	https://www.imdb.com/title/tt1839494	b'A movie with lot of plot holes... but still good. In the end the movie is still incomplete'
+Weathering with You (2019)	https://www.imdb.com/title/tt9426210	b'A movie driven by pure aesthetics. Not so sure about the story'
+Blade Runner 2049 (2017)	https://www.imdb.com/title/tt1856101	b'Mast cgi aur vfx hai. Story confusing hai'
+The Coward (1965)	https://www.imdb.com/title/tt0059348	b'A Satyajit Ray film that was released as part of a duo of films. The story of a coward as the name suggests, impressionist cinema.'
+The Holy Man (1965)	https://www.imdb.com/title/tt0059417	b'Released as a duo of films, it explores the story of a neighbourhood when a godman arrives claiming to be older than time itself. H'
+For a Few Dollars More (1965)	https://www.imdb.com/title/tt0059578	b'Part of the Dollars Trilogy.'
+The Abeer Color (2009)	https://www.imdb.com/title/tt1261047	b'This is Gulaal. A story of politics with parallels drawn to college politics, with the songs on global satire. A really really nice film.'
+Paan Singh Tomar (2012)	https://www.imdb.com/title/tt1620933	
+Kim's Convenience (2016)	https://www.imdb.com/title/tt5912064	b'A light hearted comedy about a immigrant family in Canada running a store'
+Veep (2012)	https://www.imdb.com/title/tt1759761	b'Julia Louis Dreyfus stars as the Vice President of US in this HBO comedy.'
+The Man Who Knew Too Much (1956)	https://www.imdb.com/title/tt0049470	b'A great Alfred Hitchcock thriller'
+Split (2016)	https://www.imdb.com/title/tt4972582	b'Another M. Shyamalan movie with great story'
+Karwaan (2018)	https://www.imdb.com/title/tt7919680	b'Genre : Comedy interesting story'
+Dallas Buyers Club (2013)	https://www.imdb.com/title/tt0790636	b"matthew mcconaughey's oscar winning performance."
+Your Name. (2016)	https://www.imdb.com/title/tt5311514	b'One of a kind anime film, very good colours and shots(?) and unique plot'
+The Founder (2016)	https://www.imdb.com/title/tt4276820	b'Follows the story of Ray Kroc, on how he builds the McD empire.'
+Memories of Murder (2003)	https://www.imdb.com/title/tt0353969	b"Based on the real events of then unsolved murders. I've heard they've found the killer. Should be an interesting read after watching the movie."
+Zodiac (2007)	https://www.imdb.com/title/tt0443706	b'A movie based on the zodiac killer and all the events surrounding his period. A really nice watch.'
+Princess Mononoke (1997)	https://www.imdb.com/title/tt0119698	b"Don't have much to say, it's a nice film. Recently saw it. Might have more to say when we discuss."
